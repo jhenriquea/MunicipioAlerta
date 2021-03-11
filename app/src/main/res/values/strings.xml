@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MunicipioAlerta</string>
+    
+    <!--Ecra Inicial-->
+    <string name="hometitle">Municipio Alerta</string>
+    <string name="entrarInicial">Entrar</string>
+    
+     <!--Ecra de Login-->
+    <string name="loginTitle">Login</string>
+    <string name="nomeUser">Nome de Utilizador:</string>
+    <string name="password">Palavra-Passe:</string>
+    <string name="entrarLogin">Entrar</string>
+    <string name="conta">Ainda não tem conta?</string>
+    
+    <!---Ecra de Registo -->
+    <string name="registoTitle">Registo</string>
+    <string name="nomeUserRegisto">Nome de Utilizador</string>
+    <string name="email">Email</string>
+    <string name="passRegisto">Palavra-Passe</string>
+    <string name="passRegisto2">Repetir Palavra-Passe</string>
+</resources>
