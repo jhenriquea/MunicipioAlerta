@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.*
 import ipvc.estg.municipioalerta.db.NotaDB
 import ipvc.estg.municipioalerta.db.*
-import ipvc.estg.municipioalerta.db.NotaDB.NotaRoomDatabase.Companion.getDatabase
+//import ipvc.estg.municipioalerta.db.NotaDB.NotaRoomDatabase.Companion.getDatabase
 import ipvc.estg.municipioalerta.entities.Nota
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers

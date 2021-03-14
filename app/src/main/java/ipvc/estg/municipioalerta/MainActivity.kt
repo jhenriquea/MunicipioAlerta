@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun notas(view: View) {
+    fun notasPessoais(view: View) {
         val intent = Intent(this, Notas::class.java)
         startActivity(intent)
     }

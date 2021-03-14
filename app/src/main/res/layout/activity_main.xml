@@ -35,7 +35,7 @@
     <Button
         android:id="@+id/button2"
         style="@style/butao"
-        android:onClick="notas"
+        android:onClick="notasPessoais"
         android:text="@string/notasInicial"
         app:backgroundTint="#AEAEAE"
         app:layout_constraintBottom_toBottomOf="parent"

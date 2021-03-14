@@ -6,7 +6,7 @@ import ipvc.estg.municipioalerta.db.NotaRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 
-class NotesApplication : Application() {
+class NotaApplication : Application() {
     // No need to cancel this scope as it'll be torn down with the process
     val applicationScope = CoroutineScope(SupervisorJob())
 

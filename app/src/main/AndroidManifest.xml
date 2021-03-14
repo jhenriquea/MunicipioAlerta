@@ -3,13 +3,15 @@
     package="ipvc.estg.municipioalerta">
 
     <application
+        android:name=".NotaApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MunicipioAlerta">
-        <activity android:name=".Notas"></activity>
+        <activity android:name=".InserirNota"></activity>
+        <activity android:name=".Notas" />
         <activity android:name=".Registo" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity">
