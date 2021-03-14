@@ -19,4 +19,7 @@
     <string name="email">Email</string>
     <string name="passRegisto">Palavra-Passe</string>
     <string name="passRegisto2">Repetir Palavra-Passe</string>
+
+    <!--Ecra Notas -->
+    <string name="adicionarNota">Adicionar</string>
 </resources>
