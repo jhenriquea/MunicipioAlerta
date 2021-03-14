@@ -4,6 +4,7 @@
     <!--Ecra Inicial-->
     <string name="hometitle">Municipio Alerta</string>
     <string name="entrarInicial">Entrar</string>
+    <string name="notasInicial">Notas</string>
 
     <!--Ecra de Login-->
     <string name="loginTitle">Login</string>

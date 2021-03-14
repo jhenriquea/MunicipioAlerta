@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MunicipioAlerta">
-        <activity android:name=".Registo"></activity>
+        <activity android:name=".Notas"></activity>
+        <activity android:name=".Registo" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity">
             <intent-filter>
