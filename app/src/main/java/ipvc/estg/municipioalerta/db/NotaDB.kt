@@ -19,24 +19,13 @@ import kotlinx.coroutines.launch
             private val scope: CoroutineScope
         ) : RoomDatabase.Callback() {
 
-            override fun onCreate(db: SupportSQLiteDatabase) {
-                super.onCreate(db)
+            override fun onOpen(db: SupportSQLiteDatabase) {
+                super.onOpen(db)
                 INSTANCE?.let { database ->
                     scope.launch {
-                        populateDatabase(database.notaDao())
+                        var notasDao = database.notaDao()
                     }
                 }
-            }
-
-            suspend fun populateDatabase(noteDao: NotaDao) {
-                // Delete all content here.
-                noteDao.deleteAll()
-
-                // Add sample words.
-                var nota = Nota(1, "titulo", "descricao")
-                noteDao.insert(nota)
-
-                // TODO: Add your own words!
             }
         }
 

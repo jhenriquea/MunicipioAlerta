@@ -14,4 +14,8 @@ class NotaRepository( private val notaDao: NotaDao ) {
     suspend fun insert(nota: Nota) {
         notaDao.insert(nota)
     }
+
+    suspend fun deleteNoteById(id:Int?){
+        notaDao.deleteNoteById(id)
+    }
 }

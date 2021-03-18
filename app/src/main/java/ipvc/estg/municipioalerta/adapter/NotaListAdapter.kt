@@ -1,59 +1,79 @@
 package ipvc.estg.municipioalerta.adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ListAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.*
+import ipvc.estg.municipioalerta.Notas
 import ipvc.estg.municipioalerta.R
 import ipvc.estg.municipioalerta.entities.Nota
 
-class NotaListAdapter : androidx.recyclerview.widget.ListAdapter<Nota, NotaListAdapter.NoteViewHolder>(NotesComparator()) {
-    private var notes = emptyList<Nota>()
+const val TITULO="TITULO"
+const val DESCRICAO="DESCRICAO"
+const val ID="ID"
+
+class NotaListAdapter internal constructor(
+        context: Context, private val callbackInterface: Notas
+): RecyclerView.Adapter<NotaListAdapter.NoteViewHolder>() {
+
+    private val inflater: LayoutInflater = LayoutInflater.from(context)
+    private var notas = emptyList<Nota>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        return NoteViewHolder.create(parent)
-    }
-
-    override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        val current = getItem(position)
-        holder.bindTitle(current.titulo)
-        holder.bindDescription(current.descricao)
-    }
-
-    internal fun setNotes(notes: List<Nota>) {
-        this.notes = notes
-        notifyDataSetChanged()
+        val itemView = inflater.inflate(R.layout.recyclerline, parent, false)
+        return NoteViewHolder(itemView)
     }
 
     class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val noteItemViewTitle: TextView = itemView.findViewById(R.id.recyclerTitulo)
-        private val noteItemViewDesc: TextView = itemView.findViewById(R.id.recyclerDescricao)
-
-        fun bindTitle(title: String?) {
-            noteItemViewTitle.text = title
-        }
-        fun bindDescription(desc: String?) {
-            noteItemViewDesc.text = desc
-        }
-
-        companion object {
-            fun create(parent: ViewGroup): NoteViewHolder {
-                val view: View = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.recyclerline, parent, false)
-                return NoteViewHolder(view)
-            }
-        }
+        val noteItemViewTitle: TextView = itemView.findViewById(R.id.recyclerTitulo)
+        val noteItemViewDesc: TextView = itemView.findViewById(R.id.recyclerDescricao)
+        val edit: ImageButton = itemView.findViewById(R.id.recyclerEdit)
+        val delete: ImageButton = itemView.findViewById(R.id.recyclerDelete)
     }
 
-    class NotesComparator : DiffUtil.ItemCallback<Nota>() {
-        override fun areItemsTheSame(oldItem: Nota, newItem: Nota): Boolean {
-            return oldItem === newItem
+    override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
+        val current = notas[position]
+        holder.noteItemViewTitle.text = current.titulo
+        holder.noteItemViewDesc.text = current.descricao
+        val id: Int? = current.id
+
+        holder.delete.setOnClickListener {
+            callbackInterface.delete(current.id)
         }
 
-        override fun areContentsTheSame(oldItem: Nota, newItem: Nota): Boolean {
-            return oldItem.id == newItem.id
-        }
+//        holder.edit.setOnClickListener {
+//            val context = holder.notaItemView.context
+//            val titl = holder.notaItemView.text.toString()
+//            val desc = holder.descricao.text.toString()
+//
+//            val intent = Intent(context, EditNotasActivity::class.java).apply {
+//                putExtra(TITULO, titl)
+//                putExtra(DESCRICAO, desc )
+//                putExtra( ID,id)
+//            }
+//            context.startActivity(intent)
+//        }
     }
+
+    internal fun setNotas(nota: List<Nota>) {
+        this.notas = nota
+        notifyDataSetChanged()
+    }
+
+    override fun getItemCount() = notas.size
+
+//    class NotesComparator : DiffUtil.ItemCallback<Nota>() {
+//        override fun areItemsTheSame(oldItem: Nota, newItem: Nota): Boolean {
+//            return oldItem === newItem
+//        }
+//
+//        override fun areContentsTheSame(oldItem: Nota, newItem: Nota): Boolean {
+//            return oldItem.id == newItem.id
+//        }
+//    }
 }
