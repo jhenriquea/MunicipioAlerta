@@ -22,4 +22,5 @@
 
     <!--Ecra Notas -->
     <string name="adicionarNota">Adicionar</string>
+    <string name="cancelarAlterar">Cancelar</string>
 </resources>

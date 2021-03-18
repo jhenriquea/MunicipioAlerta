@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.ListAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.*
+import ipvc.estg.municipioalerta.AlterarNota
 import ipvc.estg.municipioalerta.Notas
 import ipvc.estg.municipioalerta.R
 import ipvc.estg.municipioalerta.entities.Nota
@@ -23,6 +24,10 @@ class NotaListAdapter internal constructor(
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var notas = emptyList<Nota>()
+
+    interface CallbackInterface {
+        fun passResultCallback(id: Int?)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val itemView = inflater.inflate(R.layout.recyclerline, parent, false)
@@ -46,18 +51,18 @@ class NotaListAdapter internal constructor(
             callbackInterface.delete(current.id)
         }
 
-//        holder.edit.setOnClickListener {
-//            val context = holder.notaItemView.context
-//            val titl = holder.notaItemView.text.toString()
-//            val desc = holder.descricao.text.toString()
-//
-//            val intent = Intent(context, EditNotasActivity::class.java).apply {
-//                putExtra(TITULO, titl)
-//                putExtra(DESCRICAO, desc )
-//                putExtra( ID,id)
-//            }
-//            context.startActivity(intent)
-//        }
+        holder.edit.setOnClickListener {
+            val context = holder.noteItemViewTitle.context
+            val titulo = holder.noteItemViewTitle.text.toString()
+            val descricao = holder.noteItemViewDesc.text.toString()
+
+            val intent = Intent(context, AlterarNota::class.java).apply {
+                putExtra(TITULO, titulo)
+                putExtra(DESCRICAO, descricao )
+                putExtra( ID,id)
+            }
+            context.startActivity(intent)
+        }
     }
 
     internal fun setNotas(nota: List<Nota>) {

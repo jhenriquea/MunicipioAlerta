@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
@@ -61,5 +62,10 @@ class Notas : AppCompatActivity() {
 
     fun delete(id: Int?) {
         notaViewModel.deleteNoteById(id)
+    }
+
+    fun alterarNota(view: View){
+        var intent = Intent(this, AlterarNota::class.java).apply {  }
+        startActivity(intent)
     }
 }
