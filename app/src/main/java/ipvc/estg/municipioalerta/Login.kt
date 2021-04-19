@@ -21,8 +21,8 @@ class Login : AppCompatActivity() {
 
 
 
-    fun registoLogin (view: View) {
-        val intent = Intent(this, Registo::class.java)
-        startActivity(intent)
-    }
+//    fun registoLogin (view: View) {
+//        val intent = Intent(this, Registo::class.java)
+//        startActivity(intent)
+//    }
 }
