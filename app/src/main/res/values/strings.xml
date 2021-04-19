@@ -23,4 +23,6 @@
     <!--Ecra Notas -->
     <string name="adicionarNota">Adicionar</string>
     <string name="cancelarAlterar">Cancelar</string>
+    <string name="campos">Ambos os campos devem ser preenchidos!</string>
+    <string name="campos2">Ambos os campos devem ser preenchidos!</string>
 </resources>

@@ -8,6 +8,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class InserirNota : AppCompatActivity() {
     private lateinit var editTextTitle: EditText
@@ -23,8 +24,12 @@ class InserirNota : AppCompatActivity() {
         val buttonSaveNote = findViewById<Button>(R.id.button_save)
         buttonSaveNote.setOnClickListener {
             val replyIntent = Intent()
-            if(TextUtils.isEmpty(editTextTitle.text) && TextUtils.isEmpty(editTextDesc.text)) {
+            if(TextUtils.isEmpty(editTextTitle.text) || TextUtils.isEmpty(editTextDesc.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
+                Toast.makeText(
+                        applicationContext,
+                        R.string.campos2,
+                        Toast.LENGTH_LONG).show()
             } else {
                 val noteTitle = editTextTitle.text.toString()
                 val noteDesc = editTextDesc.text.toString()
@@ -32,8 +37,9 @@ class InserirNota : AppCompatActivity() {
                 replyIntent.putExtra(EXTRA_REPLY_TITLE, noteTitle)
                 replyIntent.putExtra(EXTRA_REPLY_DESC, noteDesc)
                 setResult(Activity.RESULT_OK, replyIntent)
+                finish()
             }
-            finish()
+
         }
     }
 

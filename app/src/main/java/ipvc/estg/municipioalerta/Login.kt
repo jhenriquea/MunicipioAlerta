@@ -11,9 +11,18 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
     }
 
+    fun entrarLogin (view: View) {}
+
+
+
+
+
+
+
+
+
     fun registoLogin (view: View) {
         val intent = Intent(this, Registo::class.java)
         startActivity(intent)
     }
-    fun entrarLogin (view: View) {}
 }

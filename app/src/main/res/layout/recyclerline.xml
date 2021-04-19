@@ -39,13 +39,13 @@
         android:id="@+id/recyclerDelete"
         android:layout_width="45dp"
         android:layout_height="39dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
+        android:onClick="delete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.824"
+        app:layout_constraintHorizontal_bias="0.823"
         app:layout_constraintStart_toEndOf="@+id/recyclerTitulo"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_delete"
-        android:onClick="delete"/>
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <ImageButton
         android:id="@+id/recyclerEdit"

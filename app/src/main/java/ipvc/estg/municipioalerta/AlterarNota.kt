@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import ipvc.estg.municipioalerta.adapter.DESCRICAO
 import ipvc.estg.municipioalerta.adapter.ID
@@ -42,12 +43,17 @@ class AlterarNota : AppCompatActivity() {
 
         if (TextUtils.isEmpty(titulo.text) || TextUtils.isEmpty(descricao.text)) {
             setResult(Activity.RESULT_CANCELED, replyIntent)
+            Toast.makeText(
+                    applicationContext,
+                    R.string.campos2,
+                    Toast.LENGTH_LONG).show()
         }
         else {
             val nota = Nota(id = message, titulo = titulo.text.toString(), descricao = descricao.text.toString())
             notaViewModel.editNota(nota)
+            finish()
         }
-        finish()
+
     }
 
     fun cancelAlterar(view: View) {
