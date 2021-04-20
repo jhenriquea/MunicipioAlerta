@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MunicipioAlerta">
-        <activity android:name=".MenuMapa"></activity>
+        <activity android:name=".MenuMapa" />
         <activity android:name=".AlterarNota" />
         <activity android:name=".InserirNota" />
         <activity android:name=".Notas" />

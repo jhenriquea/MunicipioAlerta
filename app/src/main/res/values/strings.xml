@@ -31,4 +31,5 @@
 
     <!-- Menu Mapa -->
     <string name="logout" translatable="false">Sair</string>
+    <string name="mapa_anomalias" translatable="false">Mapa de Anomalias</string>
 </resources>
