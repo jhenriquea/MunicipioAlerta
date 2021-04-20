@@ -12,27 +12,27 @@ class MenuMapa : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_mapa)
 
-//        val sessaoAutomatica: SharedPreferences = getSharedPreferences(
-//            getString(R.string.shared_preferences),
-//            Context.MODE_PRIVATE
-//        )
+        val sessaoAutomatica: SharedPreferences = getSharedPreferences(
+            getString(R.string.shared_preferences),
+            Context.MODE_PRIVATE
+        )
 
-//        val logout = findViewById<Button>(R.id.logout)
-//
-//        logout.setOnClickListener {
-////            val sessaoAutomatica: SharedPreferences = getSharedPreferences(
-////                getString(R.string.shared_preferences),
-////                Context.MODE_PRIVATE
-////            )
-////            with(sessaoAutomatica.edit()) {
-////                clear()
-////                apply()
-////            }
-//
-//            val intent = Intent(this@MenuMapa, Login::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
+        val logout = findViewById<Button>(R.id.button_logout)
+
+        logout.setOnClickListener {
+            val sessaoAutomatica: SharedPreferences = getSharedPreferences(
+                getString(R.string.shared_preferences),
+                Context.MODE_PRIVATE
+            )
+            with(sessaoAutomatica.edit()) {
+                clear()
+                apply()
+            }
+
+            val intent = Intent(this@MenuMapa, Login::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 }

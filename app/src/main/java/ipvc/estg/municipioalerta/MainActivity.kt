@@ -13,30 +13,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-//        val sessaoAuto: SharedPreferences = getSharedPreferences(
-//            getString(R.string.shared_preferences),
-//            Context.MODE_PRIVATE
-//        )
-//
-//        if (sessaoAuto.getBoolean("loged", false)) {
-//            val intent = Intent(this@MainActivity, MenuMapa::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
-//        else{
-//            val intent = Intent(this@MainActivity, Login::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
-
-//        val sessaoAutomatica: SharedPreferences = getSharedPreferences(getString(R.string.shared_preferences),
-//            Context.MODE_PRIVATE)
     }
 
     fun entrar(view: View) {
         val intent = Intent(this, Login::class.java)
         startActivity(intent)
+
+        val sessaoAutomatica: SharedPreferences = getSharedPreferences(
+                getString(R.string.shared_preferences),
+                Context.MODE_PRIVATE
+        )
+
+        if (sessaoAutomatica.getBoolean("loged", false)) {
+            val intent = Intent(this@MainActivity, MenuMapa::class.java)
+            startActivity(intent)
+            finish()
+        }
+        else{
+            val intent = Intent(this@MainActivity, Login::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     fun notasPessoais(view: View) {
