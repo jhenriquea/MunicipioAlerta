@@ -1,28 +1,35 @@
 <resources>
     <string name="app_name">MunicipioAlerta</string>
+    <string name="shared_preferences" translatable="false">SharedPreferences</string>
+    <string name="loged" translatable="false">loged</string>
+    <string name="username" translatable="false">username</string>
 
     <!--Ecra Inicial-->
-    <string name="hometitle">Municipio Alerta</string>
-    <string name="entrarInicial">Entrar</string>
-    <string name="notasInicial">Notas</string>
+    <string name="hometitle" translatable="false">Municipio Alerta</string>
+    <string name="entrarInicial" translatable="false">Entrar</string>
+    <string name="notasInicial" translatable="false">Notas</string>
 
     <!--Ecra de Login-->
-    <string name="loginTitle">Login</string>
-    <string name="nomeUser">Nome de Utilizador:</string>
-    <string name="password">Palavra-Passe:</string>
-    <string name="entrarLogin">Entrar</string>
-    <string name="conta">Ainda não tem conta? Crie uma aqui!</string>
+    <string name="loginTitle" translatable="false">Login</string>
+    <string name="nomeUser" translatable="false">Nome de Utilizador:</string>
+    <string name="password" translatable="false">Palavra-Passe:</string>
+    <string name="entrarLogin" translatable="false">Entrar</string>
+    <string name="conta" translatable="false">Ainda não tem conta? Crie uma aqui!</string>
 
     <!---Ecra de Registo -->
-    <string name="registoTitle">Registo</string>
-    <string name="nomeUserRegisto">Nome de Utilizador</string>
-    <string name="email">Email</string>
-    <string name="passRegisto">Palavra-Passe</string>
-    <string name="passRegisto2">Repetir Palavra-Passe</string>
+    <string name="registoTitle" translatable="false">Registo</string>
+    <string name="nomeUserRegisto" translatable="false">Nome de Utilizador</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="passRegisto" translatable="false">Palavra-Passe</string>
+    <string name="passRegisto2" translatable="false">Repetir Palavra-Passe</string>
 
     <!--Ecra Notas -->
-    <string name="adicionarNota">Adicionar</string>
-    <string name="cancelarAlterar">Cancelar</string>
-    <string name="campos">Ambos os campos devem ser preenchidos!</string>
-    <string name="campos2">Ambos os campos devem ser preenchidos!</string>
+    <string name="adicionarNota" translatable="false">Adicionar</string>
+    <string name="cancelarAlterar" translatable="false">Cancelar</string>
+    <string name="campos" translatable="false">Ambos os campos devem ser preenchidos!</string>
+    <string name="campos2" translatable="false">Ambos os campos devem ser preenchidos!</string>
+
+    <!-- Menu Mapa -->
+    <string name="logout" translatable="false">Sair</string>
+    <string name="mapa_anomalias" translatable="false">Mapa de Anomalias</string>
 </resources>

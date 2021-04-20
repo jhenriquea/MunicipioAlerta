@@ -73,7 +73,6 @@
     <Button
         android:id="@+id/butaoLogin"
         style="@style/butao"
-        android:onClick="entrarLogin"
         android:text="@string/entrarLogin"
         app:backgroundTint="#AEAEAE"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -88,7 +87,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:onClick="registoLogin"
         android:text="@string/conta"
         android:textColor="#2979FF"
         app:layout_constraintBottom_toBottomOf="parent"

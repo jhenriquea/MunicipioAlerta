@@ -1,10 +1,13 @@
 package ipvc.estg.municipioalerta
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.view.View
+import androidx.core.content.ContextCompat.startActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +18,22 @@ class MainActivity : AppCompatActivity() {
     fun entrar(view: View) {
         val intent = Intent(this, Login::class.java)
         startActivity(intent)
+
+        val sessaoAutomatica: SharedPreferences = getSharedPreferences(
+                getString(R.string.shared_preferences),
+                Context.MODE_PRIVATE
+        )
+
+        if (sessaoAutomatica.getBoolean("loged", false)) {
+            val intent = Intent(this@MainActivity, MenuMapa::class.java)
+            startActivity(intent)
+            finish()
+        }
+        else{
+            val intent = Intent(this@MainActivity, Login::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     fun notasPessoais(view: View) {
