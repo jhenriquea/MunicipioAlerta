@@ -36,6 +36,8 @@ class Login : AppCompatActivity() {
             call.enqueue(object : Callback<User> {
                 override fun onResponse(call: Call<User>, response: Response<User>) {
                     if(response.isSuccessful){
+                        val user = response.body()!!
+
                         val intent = Intent(this@Login, MenuMapa::class.java)
                         startActivity(intent)
                         finish()
@@ -47,6 +49,7 @@ class Login : AppCompatActivity() {
                         with(sessaoAutomatica.edit()) {
                             putBoolean(getString(R.string.loged), true)
                             putString(getString(R.string.username), nome)
+                            putInt(getString(R.string.id), user.id)
                             apply()
                         }
                     }

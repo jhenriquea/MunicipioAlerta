@@ -10,8 +10,8 @@ data class Markers(
     val id: Int,
     val titulo: String,
     val descricao: String,
-    val lat: Double,
-    val longi: Double,
+    val latitude: Double,
+    val longitude: Double,
     val foto: String,
     val login_id: Int
 )

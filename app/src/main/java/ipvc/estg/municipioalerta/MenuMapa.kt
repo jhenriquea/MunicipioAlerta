@@ -39,7 +39,13 @@ class MenuMapa : AppCompatActivity() {
     }
 
     fun mapaAnomalias(view: View) {
-        val intent = Intent(this@MenuMapa, AlterarNota::class.java)
+        val intent = Intent(this@MenuMapa, MapaAnomalia::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    fun notasmenu(view: View) {
+        val intent = Intent(this@MenuMapa, Notas::class.java)
         startActivity(intent)
         finish()
     }
