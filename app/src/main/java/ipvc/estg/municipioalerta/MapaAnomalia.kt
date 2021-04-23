@@ -20,8 +20,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import ipvc.estg.municipioalerta.api.Anomalias
 import ipvc.estg.municipioalerta.api.EndPoints
-import ipvc.estg.municipioalerta.api.Markers
 import ipvc.estg.municipioalerta.api.ServiceBuilder
 import retrofit2.Call
 import retrofit2.Callback
@@ -56,8 +56,8 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         val request = ServiceBuilder.buildService(EndPoints::class.java)
         val call = request.getAllAnomalias()
 
-        call.enqueue(object : Callback<List<Markers>> {
-            override fun onResponse(call: Call<List<Markers>>, response: Response<List<Markers>>) {
+        call.enqueue(object : Callback<List<Anomalias>> {
+            override fun onResponse(call: Call<List<Anomalias>>, response: Response<List<Anomalias>>) {
                 if (response.isSuccessful) {
                     val anomalias = response.body()!!
 
@@ -78,7 +78,7 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
                 }
             }
-            override fun onFailure(call: Call<List<Markers>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Anomalias>>, t: Throwable) {
                 Toast.makeText(this@MapaAnomalia, "Markers Errado!", Toast.LENGTH_SHORT).show()
             }
         })

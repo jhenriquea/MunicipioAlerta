@@ -12,5 +12,5 @@ interface EndPoints {
     ): retrofit2.Call<User>
 
     @GET("anomalias")
-    fun getAllAnomalias(): retrofit2.Call<List<Markers>>
+    fun getAllAnomalias(): retrofit2.Call<List<Anomalias>>
 }

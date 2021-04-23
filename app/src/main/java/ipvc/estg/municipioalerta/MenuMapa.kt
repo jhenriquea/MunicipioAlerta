@@ -44,7 +44,7 @@ class MenuMapa : AppCompatActivity() {
         finish()
     }
 
-    fun notasmenu(view: View) {
+    fun notas_mapa(view: View) {
         val intent = Intent(this@MenuMapa, Notas::class.java)
         startActivity(intent)
         finish()

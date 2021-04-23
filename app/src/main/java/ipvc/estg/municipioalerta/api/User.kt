@@ -6,7 +6,7 @@ data class User(
     val password: String
 )
 
-data class Markers(
+data class Anomalias(
     val id: Int,
     val titulo: String,
     val descricao: String,
