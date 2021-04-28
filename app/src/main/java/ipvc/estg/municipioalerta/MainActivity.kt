@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         if (sessaoAutomatica.getBoolean("loged", false)) {
-            val intent = Intent(this@MainActivity, MenuMapa::class.java)
+            val intent = Intent(this@MainActivity, MapaAnomalia::class.java)
             startActivity(intent)
             finish()
         }

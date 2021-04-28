@@ -2,6 +2,7 @@ package ipvc.estg.municipioalerta
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Location
@@ -20,9 +21,11 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ipvc.estg.municipioalerta.api.Anomalias
 import ipvc.estg.municipioalerta.api.EndPoints
 import ipvc.estg.municipioalerta.api.ServiceBuilder
+import kotlinx.coroutines.NonCancellable.start
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -47,6 +50,51 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         mapFragment.getMapAsync(this)
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        val fab = findViewById<FloatingActionButton>(R.id.inserirAnomalia)
+        fab.setOnClickListener {
+            val intent = Intent(this@MapaAnomalia, InserirNota::class.java)
+            startActivity(intent)
+        }
+
+        val fabnotas = findViewById<FloatingActionButton>(R.id.verNotas)
+        fabnotas.setOnClickListener {
+            val intent = Intent(this@MapaAnomalia, Notas::class.java)
+            startActivity(intent)
+        }
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        map = googleMap
+
+        map.getUiSettings().setZoomControlsEnabled(true)
+        map.setOnMarkerClickListener(this)
+
+        setUpMap()
+
+        // 1
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return
+        }
+        map.isMyLocationEnabled = true
+
+        // 2
+        fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
+            // Got last known location. In some rare situations this can be null.
+            // 3
+            if (location != null) {
+                lastLocation = location
+                val currentLatLng = LatLng(location.latitude, location.longitude)
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 17f))
+            }
+        }
 
         val sessaoAuto: SharedPreferences = getSharedPreferences(
                 getString(R.string.shared_preferences),
@@ -75,48 +123,12 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                             map.addMarker(MarkerOptions().position(latlong).title(i.titulo).snippet(i.descricao))
                         }
                     }
-
                 }
             }
             override fun onFailure(call: Call<List<Anomalias>>, t: Throwable) {
                 Toast.makeText(this@MapaAnomalia, "Markers Errado!", Toast.LENGTH_SHORT).show()
             }
         })
-    }
-
-
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        map = googleMap
-
-        map.getUiSettings().setZoomControlsEnabled(true)
-        map.setOnMarkerClickListener(this)
-
-        setUpMap()
-
-        // 1
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return
-        }
-        map.isMyLocationEnabled = true
-
-// 2
-        fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
-            // Got last known location. In some rare situations this can be null.
-            // 3
-            if (location != null) {
-                lastLocation = location
-                val currentLatLng = LatLng(location.latitude, location.longitude)
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 17f))
-            }
-        }
 
     }
 

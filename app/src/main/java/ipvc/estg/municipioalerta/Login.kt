@@ -38,7 +38,7 @@ class Login : AppCompatActivity() {
                     if(response.isSuccessful){
                         val user = response.body()!!
 
-                        val intent = Intent(this@Login, MenuMapa::class.java)
+                        val intent = Intent(this@Login, MapaAnomalia::class.java)
                         startActivity(intent)
                         finish()
 
@@ -58,7 +58,6 @@ class Login : AppCompatActivity() {
                 override fun onFailure(call: Call<User>, t: Throwable) {
                     Toast.makeText(this@Login, "Login Errado!", Toast.LENGTH_SHORT).show()
                 }
-
             })
         }
     }

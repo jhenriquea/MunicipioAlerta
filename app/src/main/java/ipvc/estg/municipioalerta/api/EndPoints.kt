@@ -13,4 +13,15 @@ interface EndPoints {
 
     @GET("anomalias")
     fun getAllAnomalias(): retrofit2.Call<List<Anomalias>>
+
+    @FormUrlEncoded
+    @POST("inserirAnomalia")
+    fun inserirAnomalia(
+        @Field("titulo") titulo: String,
+        @Field("descricao") descricao: String,
+        @Field("latitude") latitude: String,
+        @Field("longitude") longitude: String,
+        @Field("foto") foto: String,
+        @Field("login_id") login_id: String
+    )
 }
