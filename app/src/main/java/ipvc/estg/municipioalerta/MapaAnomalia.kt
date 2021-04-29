@@ -25,7 +25,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ipvc.estg.municipioalerta.api.Anomalias
 import ipvc.estg.municipioalerta.api.EndPoints
 import ipvc.estg.municipioalerta.api.ServiceBuilder
-import kotlinx.coroutines.NonCancellable.start
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -144,6 +143,11 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                 Toast.makeText(this@MapaAnomalia, "Markers Errado!", Toast.LENGTH_SHORT).show()
             }
         })
+
+        map.setOnMarkerClickListener {
+            map.setInfoWindowAdapter(MarkerInfo(this))
+            false
+        }
 
     }
 
