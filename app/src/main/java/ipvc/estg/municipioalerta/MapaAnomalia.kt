@@ -62,6 +62,21 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             val intent = Intent(this@MapaAnomalia, Notas::class.java)
             startActivity(intent)
         }
+
+        val logout = findViewById<FloatingActionButton>(R.id.logout)
+        logout.setOnClickListener {
+            val sessaoAutomatica: SharedPreferences = getSharedPreferences(
+                    getString(R.string.shared_preferences),
+                    Context.MODE_PRIVATE
+            )
+            with(sessaoAutomatica.edit()) {
+                clear()
+                apply()
+            }
+
+            val intent = Intent(this@MapaAnomalia, Login::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {

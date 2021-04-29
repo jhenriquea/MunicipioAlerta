@@ -16,9 +16,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun entrar(view: View) {
-        val intent = Intent(this, Login::class.java)
-        startActivity(intent)
-
         val sessaoAutomatica: SharedPreferences = getSharedPreferences(
                 getString(R.string.shared_preferences),
                 Context.MODE_PRIVATE
