@@ -38,6 +38,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    //asdasd
+    //asdasdasd
     //asdasdasdasdasd
 }
