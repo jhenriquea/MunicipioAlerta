@@ -34,4 +34,10 @@
     <string name="mapa_anomalias" translatable="false">Mapa de Anomalias</string>
     <string name="title_activity_mapa_anomalia" translatable="false">Map</string>
     <string name="id" translatable="false">id</string>
+
+    <!-- Inserir Anomalia -->
+    <string name="nomeInserirAnomalia" translatable="false">Inserir Anomalia</string>
+    <string name="tituloAnomalia" translatable="false">Titulo</string>
+    <string name="descricacaoAnomalia" translatable="false">Descrição</string>
+    <string name="adicionarAnomalia" translatable="false">Inserir</string>
 </resources>

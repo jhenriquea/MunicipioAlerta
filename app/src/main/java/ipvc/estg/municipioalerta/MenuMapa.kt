@@ -14,7 +14,7 @@ class MenuMapa : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_mapa)
 
-        val sessaoAutomatica: SharedPreferences = getSharedPreferences(
+        val sessaoAuto: SharedPreferences = getSharedPreferences(
             getString(R.string.shared_preferences),
             Context.MODE_PRIVATE
         )
