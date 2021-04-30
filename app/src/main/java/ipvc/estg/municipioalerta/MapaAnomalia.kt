@@ -78,6 +78,7 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
             val intent = Intent(this@MapaAnomalia, Login::class.java)
             startActivity(intent)
+            finish()
         }
 
         val distancia = findViewById<Switch>(R.id.switch1)

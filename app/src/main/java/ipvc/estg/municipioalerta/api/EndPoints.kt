@@ -22,6 +22,7 @@ interface EndPoints {
         @Field("latitude") latitude: String,
         @Field("longitude") longitude: String,
         @Field("foto") foto: String,
+        @Field("tipo") tipo: String,
         @Field("login_id") login_id: Int
     ): retrofit2.Call<Anomalias>
 }

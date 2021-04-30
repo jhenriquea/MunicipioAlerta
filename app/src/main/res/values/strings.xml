@@ -40,6 +40,11 @@
     <string name="tituloAnomalia" translatable="false">Titulo</string>
     <string name="descricacaoAnomalia" translatable="false">Descrição</string>
     <string name="adicionarAnomalia" translatable="false">Inserir</string>
+    <string-array name="type_array">
+        <item>Buracos</item>
+        <item>Edificios</item>
+        <item>Transito</item>
+    </string-array>
 
     <!-- Filtros -->
     <string name="distancia" translatable="false">Distancia</string>
