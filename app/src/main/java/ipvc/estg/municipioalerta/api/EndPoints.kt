@@ -25,4 +25,7 @@ interface EndPoints {
         @Field("tipo") tipo: String,
         @Field("login_id") login_id: Int
     ): retrofit2.Call<Anomalias>
+
+    @GET("anomalia/{tipo}")
+    fun getAllAnomaliasTipo (@Path("tipo") tipo: String): retrofit2.Call<List<Anomalias>>
 }
