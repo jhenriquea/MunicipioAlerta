@@ -202,7 +202,7 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                                     .snippet(i.tipo)
                                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)))
                         } else {
-                            map.addMarker(MarkerOptions().position(latlong).title(i.titulo).snippet(i.descricao))
+                            map.addMarker(MarkerOptions().position(latlong).title(i.titulo).snippet(i.tipo))
                         }
                     }
                 }
