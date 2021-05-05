@@ -235,7 +235,6 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
                     val request = ServiceBuilder.buildService(EndPoints::class.java)
                     val call = request.getAllAnomaliasTipo(tipo = "Transito")
-                    var position: LatLng
 
                     val sessaoAuto: SharedPreferences = getSharedPreferences(
                             getString(R.string.shared_preferences), Context.MODE_PRIVATE
@@ -259,7 +258,7 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                                                 .snippet(anomalia.tipo)
                                                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)))
                                     } else {
-                                        map.addMarker(MarkerOptions().position(latlong).title(anomalia.titulo).snippet(anomalia.descricao))
+                                        map.addMarker(MarkerOptions().position(latlong).title(anomalia.titulo).snippet(anomalia.tipo))
                                     }
                                 }
                             }
@@ -313,7 +312,7 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                                                 .snippet(anomalia.tipo)
                                                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)))
                                     } else {
-                                        map.addMarker(MarkerOptions().position(latlong).title(anomalia.titulo).snippet(anomalia.descricao))
+                                        map.addMarker(MarkerOptions().position(latlong).title(anomalia.titulo).snippet(anomalia.tipo))
                                     }
                                 }
                             }
@@ -367,7 +366,7 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                                                 .snippet(anomalia.tipo)
                                                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)))
                                     } else {
-                                        map.addMarker(MarkerOptions().position(latlong).title(anomalia.titulo).snippet(anomalia.descricao))
+                                        map.addMarker(MarkerOptions().position(latlong).title(anomalia.titulo).snippet(anomalia.tipo))
                                     }
                                 }
                             }
