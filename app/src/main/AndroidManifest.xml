@@ -19,6 +19,8 @@
         android:theme="@style/Theme.MunicipioAlerta">
         <activity android:name=".sensores.Luz"></activity>
         <activity android:name=".InserirAnomalia" />
+        <activity android:name=".MarkerInfo"></activity>
+        <activity android:name=".InserirAnomalia" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

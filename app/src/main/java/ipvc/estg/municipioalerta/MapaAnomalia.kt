@@ -213,6 +213,11 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             }
         })
 
+        map.setOnMarkerClickListener {
+            map.setInfoWindowAdapter(MarkerInfo(this))
+            false
+        }
+
     }
 
     fun getTransito() {
