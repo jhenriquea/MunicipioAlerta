@@ -7,6 +7,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
@@ -60,22 +61,6 @@ class InserirAnomalia : AppCompatActivity() {
 
     fun inserirAnomalia(view: View) {
 
-//        val spinner: Spinner = findViewById(R.id.type_spinner)
-//        ArrayAdapter.createFromResource(
-//                this,
-//                R.array.type_array,
-//                android.R.layout.simple_spinner_item
-//        ).also { adapter ->
-//            // Specify the layout to use when the list of choices appears
-//            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//            // Apply the adapter to the spinner
-//            spinner.adapter = adapter
-//        }
-//
-//        val text = spinner.selectedItem.toString()
-//
-//        Toast.makeText(this@InserirAnomalia, text, Toast.LENGTH_SHORT).show()
-
         if (ActivityCompat.checkSelfPermission(this,
                         android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
@@ -97,7 +82,6 @@ class InserirAnomalia : AppCompatActivity() {
                     )
 
                     id = sessaoAuto.all[getString(R.string.id)] as Int?
-
 
                     editTextTitle = findViewById(R.id.tituloAnomalia)
                     editTextDesc = findViewById(R.id.descricaoAnomalia)
@@ -121,22 +105,28 @@ class InserirAnomalia : AppCompatActivity() {
                     val request = ServiceBuilder.buildService(EndPoints::class.java)
                     val call = request.inserirAnomalia(titulo,descricao,latitude.toString(),longitude.toString(),foto, text,login_id.toString().toInt())
 
+                    if(TextUtils.isEmpty(editTextTitle.text) || TextUtils.isEmpty(editTextDesc.text)) {
+                        Toast.makeText(
+                                applicationContext,
+                                R.string.campos2,
+                                Toast.LENGTH_LONG).show()
+                    }else {
+                        call.enqueue(object : Callback<Anomalias> {
+                            override fun onResponse(call: Call<Anomalias>, response: Response<Anomalias>) {
+                                if (response.isSuccessful) {
+                                    Toast.makeText(this@InserirAnomalia, "Adicionado Com Sucesso!", Toast.LENGTH_SHORT).show()
+                                }
 
-                    call.enqueue(object : Callback<Anomalias> {
-                        override fun onResponse(call: Call<Anomalias>, response: Response<Anomalias>) {
-                            if (response.isSuccessful) {
-                                Toast.makeText(this@InserirAnomalia, "Adicionado Com Sucesso!", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this@InserirAnomalia, MapaAnomalia::class.java)
+                                startActivity(intent)
+                                finish()
                             }
 
-                            val intent = Intent(this@InserirAnomalia, MapaAnomalia::class.java)
-                            startActivity(intent)
-                            finish()
-                        }
-
-                        override fun onFailure(call: Call<Anomalias>?, t: Throwable?) {
-                            Toast.makeText(applicationContext, t!!.message, Toast.LENGTH_SHORT).show()
-                        }
-                    })
+                            override fun onFailure(call: Call<Anomalias>?, t: Throwable?) {
+                                Toast.makeText(applicationContext, t!!.message, Toast.LENGTH_SHORT).show()
+                            }
+                        })
+                    }
                 }
             }
         }

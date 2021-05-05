@@ -77,19 +77,19 @@ class Sensores : AppCompatActivity(), SensorEventListener {
             val color = if (upDown.toInt() == 0 && sides.toInt() == 0) Color.GREEN else Color.RED
             square.setBackgroundColor(color)
 
-            square.text = "up/down ${upDown.toInt()}\nleft/right ${sides.toInt()}"
+            square.text = "Cima/Baixo ${upDown.toInt()}\nEsquerda/Direita ${sides.toInt()}"
         }
     }
 
     private fun brightness(brightness: Float): String {
 
         return when (brightness.toInt()) {
-            0 -> "Pitch black"
-            in 1..10 -> "Dark"
-            in 11..50 -> "Grey"
+            0 -> "Não se vê nada"
+            in 1..10 -> "Muito escuro"
+            in 11..50 -> "Escuro"
             in 51..5000 -> "Normal"
-            in 5001..25000 -> "Incredibly bright"
-            else -> "This light will blind you"
+            in 5001..25000 -> "Claro"
+            else -> "Demasiado Claro"
         }
     }
 
@@ -106,9 +106,6 @@ class Sensores : AppCompatActivity(), SensorEventListener {
         super.onPause()
         sensorManager.unregisterListener(this)
     }
-
-
-
 
     //ACELEROMETRO
     @RequiresApi(Build.VERSION_CODES.KITKAT)

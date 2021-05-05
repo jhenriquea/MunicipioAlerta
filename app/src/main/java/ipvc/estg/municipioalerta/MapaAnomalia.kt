@@ -59,24 +59,13 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         fab.setOnClickListener {
             val intent = Intent(this@MapaAnomalia, InserirAnomalia::class.java)
             startActivity(intent)
-            finish()
         }
 
         val fabnotas = findViewById<FloatingActionButton>(R.id.verNotas)
         fabnotas.setOnClickListener {
             val intent = Intent(this@MapaAnomalia, Notas::class.java)
             startActivity(intent)
-            finish()
         }
-
-//        val distancia = findViewById<Switch>(R.id.switch1)
-//        distancia.setOnCheckedChangeListener { _, isCheked ->
-//            if (isCheked) {
-//                distanciaMenor()
-//            } else {
-//                onMapReady(map)
-//            }
-//        }
 
         val layout = findViewById<RelativeLayout>(R.id.layout)
 
@@ -98,6 +87,7 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         val geek4 = RadioButton(this)
         geek4.layoutParams = RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         geek4.setText(R.string.todos)
+        geek4.setChecked(true)
         geek4.id = 3
 
         val radioGroup = RadioGroup(this)
@@ -142,6 +132,7 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                 distanciaMenor()
             } else {
                 onMapReady(map)
+                geek4.setChecked(true)
             }
         }
     }
@@ -381,7 +372,6 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             }
         }
     }
-
 
     fun calculateDistance(lat1: Double, lng1: Double, lat2: Double, lng2: Double): Float {
         Location.distanceBetween(lat1, lng1, lat2, lng2, results)
