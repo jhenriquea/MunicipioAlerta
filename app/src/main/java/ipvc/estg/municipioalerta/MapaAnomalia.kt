@@ -59,6 +59,7 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         fab.setOnClickListener {
             val intent = Intent(this@MapaAnomalia, InserirAnomalia::class.java)
             startActivity(intent)
+            finish()
         }
 
         val fabnotas = findViewById<FloatingActionButton>(R.id.verNotas)

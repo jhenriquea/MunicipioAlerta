@@ -53,9 +53,9 @@
     <string name="outros">Outros</string>
     <string name="todos">Todos</string>
     <string-array name="type_array">
-        <item>Buracos</item>
-        <item>Edificios</item>
         <item>Transito</item>
+        <item>Iluminacao</item>
+        <item>Outros</item>
     </string-array>
 
 </resources>
