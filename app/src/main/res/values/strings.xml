@@ -8,6 +8,7 @@
     <string name="hometitle" translatable="false">Municipio Alerta</string>
     <string name="entrarInicial">Entrar</string>
     <string name="notasInicial">Notas</string>
+    <string name="sensores">Sensores</string>
 
     <!--Ecra de Login-->
     <string name="loginTitle">Login</string>
