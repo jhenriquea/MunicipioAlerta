@@ -3,17 +3,17 @@
     <string name="shared_preferences" translatable="false">SharedPreferences</string>
     <string name="loged" translatable="false">loged</string>
     <string name="username" translatable="false">username</string>
-
+    <string name="erro">Erro</string>
     <!--Ecra Inicial-->
     <string name="hometitle" translatable="false">Municipio Alerta</string>
-    <string name="entrarInicial" translatable="false">Entrar</string>
-    <string name="notasInicial" translatable="false">Notas</string>
+    <string name="entrarInicial">Entrar</string>
+    <string name="notasInicial">Notas</string>
 
     <!--Ecra de Login-->
-    <string name="loginTitle" translatable="false">Login</string>
-    <string name="nomeUser" translatable="false">Nome de Utilizador:</string>
-    <string name="password" translatable="false">Palavra-Passe:</string>
-    <string name="entrarLogin" translatable="false">Entrar</string>
+    <string name="loginTitle">Login</string>
+    <string name="nomeUser">Nome de Utilizador:</string>
+    <string name="password">Palavra-Passe:</string>
+    <string name="entrarLogin">Entrar</string>
     <string name="conta" translatable="false">Ainda não tem conta? Crie uma aqui!</string>
 
     <!---Ecra de Registo -->
@@ -24,20 +24,37 @@
     <string name="passRegisto2" translatable="false">Repetir Palavra-Passe</string>
 
     <!--Ecra Notas -->
-    <string name="adicionarNota" translatable="false">Adicionar</string>
-    <string name="cancelarAlterar" translatable="false">Cancelar</string>
-    <string name="campos" translatable="false">Ambos os campos devem ser preenchidos!</string>
-    <string name="campos2" translatable="false">Ambos os campos devem ser preenchidos!</string>
+    <string name="adicionarNota">Adicionar</string>
+    <string name="cancelarAlterar">Cancelar</string>
+    <string name="campos">Ambos os campos devem ser preenchidos!</string>
+    <string name="campos2">Ambos os campos devem ser preenchidos!</string>
 
     <!-- Menu Mapa -->
-    <string name="logout" translatable="false">Sair</string>
-    <string name="mapa_anomalias" translatable="false">Mapa de Anomalias</string>
-    <string name="title_activity_mapa_anomalia" translatable="false">Map</string>
+    <string name="logout">Sair</string>
+    <string name="mapa_anomalias">Mapa de Anomalias</string>
+    <string name="title_activity_mapa_anomalia">Map</string>
     <string name="id" translatable="false">id</string>
+    <string name="distancia_toast">Distancia</string>
+    <string name="metros">Metros</string>
 
     <!-- Inserir Anomalia -->
-    <string name="nomeInserirAnomalia" translatable="false">Inserir Anomalia</string>
-    <string name="tituloAnomalia" translatable="false">Titulo</string>
-    <string name="descricacaoAnomalia" translatable="false">Descrição</string>
-    <string name="adicionarAnomalia" translatable="false">Inserir</string>
+    <string name="nomeInserirAnomalia">Inserir Anomalia</string>
+    <string name="tituloAnomalia">Titulo</string>
+    <string name="descricacaoAnomalia">Descrição</string>
+    <string name="adicionarAnomalia">Inserir</string>
+    <string name="inserido">Inserido com Sucesso</string>
+
+    <!-- Filtros -->
+    <string name="distancia">Distancia</string>
+    <string name="Distancia">Distancia</string>
+    <string name="transito">Transito</string>
+    <string name="iluminacao">Iluminacao</string>
+    <string name="outros">Outros</string>
+    <string name="todos">Todos</string>
+    <string-array name="type_array">
+        <item>Buracos</item>
+        <item>Edificios</item>
+        <item>Transito</item>
+    </string-array>
+
 </resources>

@@ -14,7 +14,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:ignore="UseSwitchCompatOrMaterialXml">
 
     <fragment
         android:id="@+id/map"
@@ -23,8 +24,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:context=".MapaAnomalia" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -58,5 +61,35 @@
         android:src="@drawable/ic_baseline_exit_to_app_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="132dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@color/cinza"
+        android:checked="false"
+        android:text="@string/Distancia"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.863" />
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="169dp"
+        android:layout_height="153dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/cinza"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.737"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context=".MainActivity">
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,5 +13,6 @@ data class Anomalias(
     val latitude: Double,
     val longitude: Double,
     val foto: String,
+    val tipo: String,
     val login_id: Int
 )
