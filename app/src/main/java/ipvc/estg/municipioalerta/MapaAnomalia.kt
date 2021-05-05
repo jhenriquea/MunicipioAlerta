@@ -213,10 +213,10 @@ class MapaAnomalia : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             }
         })
 
-        map.setOnMarkerClickListener {
-            map.setInfoWindowAdapter(MarkerInfo(this))
-            false
-        }
+//        map.setOnMarkerClickListener {
+//            map.setInfoWindowAdapter(MarkerInfo(this))
+//            false
+//        }
 
     }
 

@@ -14,19 +14,14 @@ class MenuMapa : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_mapa)
 
-        val sessaoAuto: SharedPreferences = getSharedPreferences(
-            getString(R.string.shared_preferences),
-            Context.MODE_PRIVATE
-        )
-
         val logout = findViewById<Button>(R.id.button_logout)
 
         logout.setOnClickListener {
-            val sessaoAutomatica: SharedPreferences = getSharedPreferences(
+            val sessaoAuto: SharedPreferences = getSharedPreferences(
                 getString(R.string.shared_preferences),
                 Context.MODE_PRIVATE
             )
-            with(sessaoAutomatica.edit()) {
+            with(sessaoAuto.edit()) {
                 clear()
                 apply()
             }
@@ -47,6 +42,5 @@ class MenuMapa : AppCompatActivity() {
     fun notas_mapa(view: View) {
         val intent = Intent(this@MenuMapa, Notas::class.java)
         startActivity(intent)
-        finish()
     }
 }

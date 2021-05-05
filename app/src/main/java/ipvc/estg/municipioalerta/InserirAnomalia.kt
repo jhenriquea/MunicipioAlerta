@@ -52,9 +52,9 @@ class InserirAnomalia : AppCompatActivity() {
             spinner.adapter = adapter
         }
 
-        val text = spinner.selectedItem.toString()
-
-        Toast.makeText(this@InserirAnomalia, text, Toast.LENGTH_SHORT).show()
+//        val text = spinner.selectedItem.toString()
+//
+//        Toast.makeText(this@InserirAnomalia, text, Toast.LENGTH_SHORT).show()
 
     }
 
