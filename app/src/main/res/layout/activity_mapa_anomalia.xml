@@ -70,27 +70,12 @@
         android:layout_marginLeft="16dp"
         android:background="@color/cinza"
         android:checked="false"
-        android:text="Switch"
+        android:text="@string/Distancia"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.863" />
-
-    <Switch
-        android:id="@+id/switch2"
-        android:layout_width="132dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:background="@color/cinza"
-        android:checked="false"
-        android:text="Switch"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.753" />
 
     <RelativeLayout
         android:id="@+id/layout"
