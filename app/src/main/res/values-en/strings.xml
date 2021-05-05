@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MunicipioAlerta</string>
+    <string name="erro">Error</string>
+    <string name="entrarInicial" translatable="false">Login</string>
+    <string name="notasInicial" translatable="false">Notes</string>
+    <string name="loginTitle">Login</string>
+    <string name="nomeUser">Username:</string>
+    <string name="password" translatable="false">Password:</string>
+    <string name="entrarLogin">Login</string>
+    <string name="adicionarNota">Add</string>
+    <string name="cancelarAlterar">Cancel</string>
+    <string name="campos">Both fields must be filled</string>
+    <string name="campos2">Both fields must be filled</string>
+    <string name="logout">Logout</string>
+    <string name="mapa_anomalias">Anomaly Map</string>
+    <string name="title_activity_mapa_anomalia">Map</string>
+    <string name="distancia_toast">Distance</string>
+    <string name="metros">Meters</string>
+    <string name="nomeInserirAnomalia">New Anomaly</string>
+    <string name="tituloAnomalia">Title</string>
+    <string name="descricacaoAnomalia">Description</string>
+    <string name="adicionarAnomalia">Add</string>
+    <string name="inserido">Successfully inserted</string>
+    <string name="distancia">Distance</string>
+    <string name="Distancia">Distance</string>
+    <string name="transito">Roads</string>
+    <string name="iluminacao">Lighting</string>
+    <string name="outros" translatable="false">Others</string>
+    <string name="todos">All</string>
+    <string name="sensores">Sensors</string>
+</resources>
