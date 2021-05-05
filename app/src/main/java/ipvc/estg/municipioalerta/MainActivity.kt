@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.view.View
 import androidx.core.content.ContextCompat.startActivity
+import ipvc.estg.municipioalerta.sensores.Sensores
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +39,13 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun sensores(view: View) {
+        val intent = Intent(this, Sensores::class.java)
+        startActivity(intent)
+    }
+
     //asdasd
-    //master
+    //asdasdasdasdasd
+    //asdasdasdasdasdasd
+    //dev
 }
